@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d3ros0blj6vbl"
+path="res://.godot/imported/guitar trumpet.mp3-dec68ce87868c3b8b3bb565785ee5632.mp3str"
+
+[deps]
+
+source_file="res://audio/guitar trumpet.mp3"
+dest_files=["res://.godot/imported/guitar trumpet.mp3-dec68ce87868c3b8b3bb565785ee5632.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

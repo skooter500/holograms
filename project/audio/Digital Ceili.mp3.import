@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwxcm3ot1yovk"
+path="res://.godot/imported/Digital Ceili.mp3-cc9e2d29ef4bf5b7538af6fb6f96133c.mp3str"
+
+[deps]
+
+source_file="res://audio/Digital Ceili.mp3"
+dest_files=["res://.godot/imported/Digital Ceili.mp3-cc9e2d29ef4bf5b7538af6fb6f96133c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

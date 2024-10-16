@@ -1,0 +1,112 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2wyuffja7hdc"]
+
+[ext_resource type="Script" path="res://scenes/node_3d.gd" id="1_dcib2"]
+[ext_resource type="PackedScene" uid="uid://bou3e1vxy1drk" path="res://scenes/drumguy.tscn" id="2_f5tu8"]
+[ext_resource type="PackedScene" uid="uid://bnstuk747kcc" path="res://world_environment.tscn" id="2_qkoqj"]
+[ext_resource type="Material" path="res://Holo/smiley2.tres" id="3_ggqak"]
+[ext_resource type="AudioStream" uid="uid://canky38xhgvie" path="res://audio/Digital Celtic Echoes.mp3" id="4_1xtpi"]
+[ext_resource type="Script" path="res://SpatialAudioPlayer3D.gd" id="4_geet0"]
+[ext_resource type="Script" path="res://scenes/loop_animation.gd" id="4_h5qon"]
+[ext_resource type="PackedScene" uid="uid://c0qfv3ahy2r88" path="res://player.tscn" id="5_jd3hi"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_c4w73"]
+
+[node name="stage" type="Node3D"]
+script = ExtResource("1_dcib2")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_qkoqj")]
+
+[node name="drumguy" parent="." instance=ExtResource("2_f5tu8")]
+transform = Transform3D(0.688355, 0, -0.725374, 0, 1, 0, 0.725374, 0, 0.688355, -0.558, 0, 0.153)
+
+[node name="drumaa" parent="drumguy" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328824, 0, 1.13904)
+
+[node name="Skeleton3D" parent="drumguy/drumaa/Armature" index="0"]
+bones/0/position = Vector3(-6.75671e-08, 4.84474e-07, -0.997919)
+bones/0/rotation = Quaternion(-0.707107, 3.00601e-05, 3.20308e-05, 0.707107)
+bones/1/rotation = Quaternion(-0.0607302, -2.86216e-12, 6.11934e-06, 0.998154)
+bones/5/rotation = Quaternion(-9.48854e-09, 1.6508e-14, 1.45477e-11, 1)
+bones/7/position = Vector3(0.0610582, 0.0910627, 0.00757061)
+bones/7/rotation = Quaternion(-0.453835, -0.544849, 0.551139, -0.439794)
+bones/8/rotation = Quaternion(-0.0104521, -0.00106276, 0.101151, 0.994816)
+bones/9/position = Vector3(1.45496e-07, 0.274047, 1.2504e-07)
+bones/9/rotation = Quaternion(5.56833e-07, -8.12175e-08, -8.00268e-09, 1)
+bones/10/rotation = Quaternion(4.93972e-07, -1.71314e-08, -6.70483e-08, 1)
+bones/11/rotation = Quaternion(0.251895, -0.059464, 0.221923, 0.940087)
+bones/12/rotation = Quaternion(6.90742e-06, 3.51652e-07, 1.1567e-06, 1)
+bones/13/position = Vector3(-4.19095e-08, 0.0438212, -3.93528e-07)
+bones/13/rotation = Quaternion(4.16935e-07, -9.00035e-08, -4.84288e-08, 1)
+bones/15/rotation = Quaternion(1.08879e-06, -1.60014e-08, 4.71408e-06, 1)
+bones/16/rotation = Quaternion(-2.4962e-06, 1.12109e-07, -6.25453e-06, 1)
+bones/17/rotation = Quaternion(8.38729e-07, -4.25755e-09, -4.02787e-08, 1)
+bones/19/rotation = Quaternion(-5.60456e-07, 8.3619e-08, -1.63152e-08, 1)
+bones/20/rotation = Quaternion(1.46084e-06, -3.033e-08, 2.29723e-09, 1)
+bones/21/rotation = Quaternion(-6.59489e-07, -5.57629e-08, -3.22465e-09, 1)
+bones/23/rotation = Quaternion(-7.1857e-07, 1.22585e-07, 4.60337e-06, 1)
+bones/24/rotation = Quaternion(-3.66195e-07, 8.51317e-09, -8.16299e-06, 1)
+bones/25/rotation = Quaternion(-2.17109e-06, 1.44511e-07, 2.34791e-07, 1)
+bones/27/rotation = Quaternion(2.18382e-06, 1.99398e-07, 0.000140847, 1)
+bones/28/rotation = Quaternion(-6.45179e-06, -4.62325e-07, -0.00036818, 1)
+bones/29/rotation = Quaternion(7.4671e-06, 6.40817e-07, 0.000230323, 1)
+bones/31/rotation = Quaternion(0.453838, -0.544847, 0.55114, 0.439793)
+bones/32/rotation = Quaternion(-0.0104558, 0.00106312, -0.101149, 0.994816)
+bones/33/rotation = Quaternion(3.21577e-07, -3.67885e-08, 2.64925e-08, 1)
+bones/34/position = Vector3(1.35289e-07, 0.276145, 1.40208e-08)
+bones/34/rotation = Quaternion(-5.00409e-07, -2.35708e-08, 8.2008e-09, 1)
+bones/35/rotation = Quaternion(0.251895, 0.0594643, -0.221924, 0.940087)
+bones/36/position = Vector3(8.75443e-08, 0.0474495, -9.29972e-08)
+bones/36/rotation = Quaternion(8.58517e-06, -2.38909e-07, -6.85453e-07, 1)
+bones/37/position = Vector3(-8.00938e-08, 0.0438216, 1.38855e-07)
+bones/37/rotation = Quaternion(-1.16363e-06, 6.17359e-07, 2.16067e-07, 1)
+bones/39/rotation = Quaternion(-2.98875e-09, -3.21976e-09, -4.73801e-06, 1)
+bones/40/rotation = Quaternion(7.50848e-07, 3.58205e-08, 4.13313e-06, 1)
+bones/41/position = Vector3(-1.2562e-07, 0.0341517, -4.71879e-08)
+bones/41/rotation = Quaternion(2.84306e-06, 1.01247e-07, 1.94645e-08, 1)
+bones/43/rotation = Quaternion(-3.236e-09, -3.23782e-09, -3.99248e-07, 1)
+bones/44/rotation = Quaternion(1.9114e-06, 1.23254e-07, 7.55123e-08, 1)
+bones/45/rotation = Quaternion(-1.06338e-06, -1.09712e-07, -6.25286e-08, 1)
+bones/47/rotation = Quaternion(1.80394e-06, 1.58604e-08, -4.83609e-06, 1)
+bones/48/rotation = Quaternion(-1.43555e-06, -5.09995e-09, 7.97435e-06, 1)
+bones/49/rotation = Quaternion(7.1616e-07, 1.20107e-07, 2.37463e-07, 1)
+bones/51/rotation = Quaternion(1.78423e-06, -5.05003e-09, -3.19698e-06, 1)
+bones/52/rotation = Quaternion(-1.02498e-06, 4.90475e-08, 1.0554e-05, 1)
+bones/53/rotation = Quaternion(1.20432e-06, -1.06983e-07, -1.06022e-05, 1)
+bones/55/rotation = Quaternion(2.03704e-05, -0.00635018, 0.999975, -0.00296965)
+bones/56/rotation = Quaternion(-0.0181143, 0.000182611, -0.00592015, 0.999818)
+bones/57/rotation = Quaternion(0.54055, 0.0143665, 0.024951, 0.840819)
+bones/58/rotation = Quaternion(0.227692, -0.0325222, -0.0153656, 0.973069)
+bones/60/rotation = Quaternion(-1.82469e-05, -0.0063338, 0.999975, 0.00305746)
+bones/61/rotation = Quaternion(-0.0181471, -0.000182945, 0.00592015, 0.999818)
+bones/62/rotation = Quaternion(0.540564, -0.0143659, -0.0249514, 0.84081)
+bones/63/rotation = Quaternion(0.227709, 0.0321184, 0.0152576, 0.97308)
+
+[node name="Alpha_Joints" parent="drumguy/drumaa/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_ggqak")
+
+[node name="Alpha_Surface" parent="drumguy/drumaa/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_ggqak")
+
+[node name="AnimationPlayer" parent="drumguy/drumaa" index="1"]
+script = ExtResource("4_h5qon")
+
+[node name="AudioStreamPlayer3D" parent="drumguy" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355962, 1.59907, -0.417428)
+stream = ExtResource("4_1xtpi")
+script = ExtResource("4_geet0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="player" parent="." instance=ExtResource("5_jd3hi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402998, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_c4w73")
+
+[connection signal="animation_finished" from="drumguy/drumaa/AnimationPlayer" to="drumguy/drumaa/AnimationPlayer" method="_on_animation_finished"]
+
+[editable path="drumguy"]
+[editable path="player"]

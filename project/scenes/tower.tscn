@@ -1,0 +1,170 @@
+[gd_scene load_steps=21 format=3 uid="uid://x5jdi2e3wcn7"]
+
+[ext_resource type="Script" path="res://scenes/node_3d.gd" id="1_4tpcb"]
+[ext_resource type="PackedScene" uid="uid://bnstuk747kcc" path="res://world_environment.tscn" id="2_k62us"]
+[ext_resource type="Script" path="res://vehicles/vehicle.gd" id="2_vtfn8"]
+[ext_resource type="PackedScene" uid="uid://b0md2olkx67fx" path="res://scene_switcher.tscn" id="3_baol2"]
+[ext_resource type="ArrayMesh" uid="uid://bqrwin8ccgptt" path="res://vehicles/meshes/wheel.res" id="3_yub5n"]
+[ext_resource type="ArrayMesh" uid="uid://ctglc27jx8xe2" path="res://vehicles/meshes/truck_cab.res" id="4_ydx82"]
+[ext_resource type="AudioStream" uid="uid://cb7wvsd6vygd3" path="res://vehicles/engine.wav" id="5_m1s5o"]
+[ext_resource type="AudioStream" uid="uid://sy2li7u35867" path="res://vehicles/impact_1.wav" id="6_oolhs"]
+[ext_resource type="Script" path="res://scenes/tower.gd" id="6_qwy1y"]
+[ext_resource type="PackedScene" uid="uid://ditt3gf3kwbha" path="res://scenes/block.tscn" id="7_2hlmi"]
+[ext_resource type="AudioStream" uid="uid://bf0h7s81yr8nj" path="res://vehicles/impact_2.wav" id="7_uja2l"]
+[ext_resource type="AudioStream" uid="uid://sun2n8a4xapl" path="res://vehicles/impact_3.wav" id="8_njvpo"]
+[ext_resource type="PackedScene" uid="uid://c0qfv3ahy2r88" path="res://player.tscn" id="9_6gvi5"]
+[ext_resource type="AudioStream" uid="uid://dpbayeeufya21" path="res://vehicles/impact_4.wav" id="9_ura6p"]
+[ext_resource type="Script" path="res://FPController.gd" id="10_mypfa"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="14_ulqa8"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="15_rtkty"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_itmot"]
+size = Vector3(1.3392, 1.04159, 2.3947)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xu0em"]
+random_pitch = 1.05
+random_volume_offset_db = 2.0
+streams_count = 4
+stream_0/stream = ExtResource("6_oolhs")
+stream_1/stream = ExtResource("7_uja2l")
+stream_2/stream = ExtResource("8_njvpo")
+stream_3/stream = ExtResource("9_ura6p")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1x3xx"]
+
+[node name="stage" type="Node3D"]
+script = ExtResource("1_4tpcb")
+
+[node name="TrailerTruck" type="Node3D" parent="."]
+
+[node name="Body" type="VehicleBody3D" parent="TrailerTruck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00169557, 0.222867, -0.0955184)
+center_of_mass_mode = 1
+script = ExtResource("2_vtfn8")
+
+[node name="Wheel1" type="VehicleWheel3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.000773743, 1.10416)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.23
+wheel_friction_slip = 1.0
+suspension_stiffness = 28.0
+damping_compression = 0.88
+
+[node name="Wheel1" type="MeshInstance3D" parent="TrailerTruck/Body/Wheel1"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_yub5n")
+
+[node name="Wheel2" type="VehicleWheel3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.573678, 0.000773743, -0.783403)
+use_as_traction = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.23
+wheel_friction_slip = 1.0
+suspension_stiffness = 28.0
+damping_compression = 0.88
+
+[node name="Wheel2" type="MeshInstance3D" parent="TrailerTruck/Body/Wheel2"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_yub5n")
+
+[node name="Wheel3" type="VehicleWheel3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573678, 0.000773743, 1.10416)
+use_as_traction = true
+use_as_steering = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.23
+wheel_friction_slip = 1.0
+suspension_stiffness = 28.0
+damping_compression = 0.88
+
+[node name="Wheel3" type="MeshInstance3D" parent="TrailerTruck/Body/Wheel3"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_yub5n")
+
+[node name="Wheel4" type="VehicleWheel3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.573678, 0.000773743, -0.783403)
+use_as_traction = true
+wheel_roll_influence = 0.4
+wheel_radius = 0.23
+wheel_friction_slip = 1.0
+suspension_stiffness = 28.0
+damping_compression = 0.88
+
+[node name="Wheel4" type="MeshInstance3D" parent="TrailerTruck/Body/Wheel4"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("3_yub5n")
+
+[node name="Body" type="MeshInstance3D" parent="TrailerTruck/Body"]
+layers = 2
+gi_mode = 2
+mesh = ExtResource("4_ydx82")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.571059, 0.132248)
+shape = SubResource("BoxShape3D_itmot")
+
+[node name="EngineSound" type="AudioStreamPlayer3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00169557, -0.222867, 0.0955184)
+stream = ExtResource("5_m1s5o")
+pitch_scale = 0.05
+autoplay = true
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="ImpactSound" type="AudioStreamPlayer3D" parent="TrailerTruck/Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00169557, -0.222867, 0.0955184)
+stream = SubResource("AudioStreamRandomizer_xu0em")
+volume_db = -9.0
+max_polyphony = 3
+attenuation_filter_cutoff_hz = 20500.0
+
+[node name="AudioListener3D" type="AudioListener3D" parent="TrailerTruck/Body"]
+current = true
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_k62us")]
+
+[node name="SceneSwitcher" parent="." instance=ExtResource("3_baol2")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="player" parent="." instance=ExtResource("9_6gvi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+script = ExtResource("10_mypfa")
+can_move = false
+
+[node name="left_xr" parent="player" index="1"]
+show_when_tracked = true
+
+[node name="MovementDirect" parent="player/left_xr" index="0" instance=ExtResource("14_ulqa8")]
+
+[node name="right_xr" parent="player" index="2"]
+show_when_tracked = true
+
+[node name="PlayerBody" parent="player" instance=ExtResource("15_rtkty")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_1x3xx")
+
+[node name="tower" type="Node3D" parent="."]
+transform = Transform3D(0.999701, -0.0171452, 0.0174497, 0.0174497, 0.999695, -0.0174524, -0.0171452, 0.0177517, 0.999695, -6.81022, 0.313434, -4.73699)
+script = ExtResource("6_qwy1y")
+block_scene = ExtResource("7_2hlmi")
+radius = 0.4
+height = 20.0
+elements = 15
+
+[node name="Marker3D" type="Marker3D" parent="tower"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.911266, -1.74623e-09, -3.72529e-09)
+
+[connection signal="input_float_changed" from="player/left_xr" to="TrailerTruck/Body" method="_on_left_xr_input_float_changed"]
+
+[editable path="player"]

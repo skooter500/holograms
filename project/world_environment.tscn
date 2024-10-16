@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnstuk747kcc"]
+
+[sub_resource type="Environment" id="Environment_osakb"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="WorldEnvironment" type="WorldEnvironment"]
+environment = SubResource("Environment_osakb")

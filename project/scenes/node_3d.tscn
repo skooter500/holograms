@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=3 uid="uid://d34dkwcriru8w"]
+
+[ext_resource type="Script" path="res://scenes/node_3d.gd" id="1_el7pw"]
+[ext_resource type="PackedScene" uid="uid://cpugpcavjfvo1" path="res://scenes/fluteguy.tscn" id="1_hkejl"]
+[ext_resource type="PackedScene" uid="uid://xvjrqfa3xhh8" path="res://scenes/jharpguy.tscn" id="2_va3tv"]
+[ext_resource type="Material" uid="uid://egxuqaeaebyn" path="res://scenes/hologram.tres" id="3_0vdw0"]
+[ext_resource type="PackedScene" uid="uid://dcj7urwaa46pf" path="res://scenes/concertinaguy.tscn" id="3_a7asx"]
+[ext_resource type="PackedScene" uid="uid://bou3e1vxy1drk" path="res://scenes/drumguy.tscn" id="4_u8rkh"]
+
+[sub_resource type="Environment" id="Environment_osakb"]
+
+[node name="stage" type="Node3D"]
+script = ExtResource("1_el7pw")
+
+[node name="fluteguy" parent="." instance=ExtResource("1_hkejl")]
+transform = Transform3D(0.821149, 0, 0.570714, 0, 1, 0, -0.570714, 0, 0.821149, -1.55295, 0, 0.357024)
+
+[node name="Alpha_Joints" parent="fluteguy/fluteb/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="Alpha_Surface" parent="fluteguy/fluteb/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="jharpguy" parent="." instance=ExtResource("2_va3tv")]
+transform = Transform3D(0.688355, 0, -0.725374, 0, 1, 0, 0.725374, 0, 0.688355, 0.76356, 0, -3.03063)
+
+[node name="Alpha_Joints" parent="jharpguy/jharpa/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="Alpha_Surface" parent="jharpguy/jharpa/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="concertinaguy" parent="." instance=ExtResource("3_a7asx")]
+transform = Transform3D(0.969872, 0, 0.243615, 0, 1, 0, -0.243615, 0, 0.969872, -0.934575, 0, -1.19382)
+
+[node name="Alpha_Joints" parent="concertinaguy/concertinaa/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="Alpha_Surface" parent="concertinaguy/concertinaa/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="drumguy" parent="." instance=ExtResource("4_u8rkh")]
+transform = Transform3D(0.688355, 0, -0.725374, 0, 1, 0, 0.725374, 0, 0.688355, 0.932159, 0, -0.208732)
+
+[node name="Alpha_Joints" parent="drumguy/drumaa/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="Alpha_Surface" parent="drumguy/drumaa/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_0vdw0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+
+[node name="XRNode3D" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="XRNode3D2" type="XRNode3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_osakb")
+
+[editable path="fluteguy"]
+[editable path="jharpguy"]
+[editable path="concertinaguy"]
+[editable path="drumguy"]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0md2olkx67fx"]
+
+[ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_a6uja"]
+
+[node name="SceneSwitcher" type="Node"]
+script = ExtResource("1_a6uja")
+scenes = Array[String](["scenes/scene1 flute.tscn", "scenes/scene2 flute.tscn", "scenes/scene3 concertina.tscn", "scenes/scene4 jharp.tscn", "scenes/scene5 drum.tscn", "scenes/scene6 flute.tscn", "scenes/scene7 flute.tscn"])

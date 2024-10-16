@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://p5jb0irbptlj"
+path="res://.godot/imported/Cosmic Frequencies.mp3-ec147c014e4bed86cb4cdc21d8c3150a.mp3str"
+
+[deps]
+
+source_file="res://audio/Cosmic Frequencies.mp3"
+dest_files=["res://.godot/imported/Cosmic Frequencies.mp3-ec147c014e4bed86cb4cdc21d8c3150a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

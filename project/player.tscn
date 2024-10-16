@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0qfv3ahy2r88"]
+
+[ext_resource type="Script" path="res://SceneSwitcher.gd" id="1_leld8"]
+
+[node name="player" type="XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="."]
+
+[node name="left_xr" type="XRController3D" parent="."]
+tracker = &"left_hand"
+
+[node name="right_xr" type="XRController3D" parent="."]
+tracker = &"right_hand"
+
+[node name="SceneSwitcher" type="Node" parent="."]
+script = ExtResource("1_leld8")
+
+[connection signal="button_pressed" from="left_xr" to="SceneSwitcher" method="_on_left_xr_button_pressed"]

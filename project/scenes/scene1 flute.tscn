@@ -1,0 +1,53 @@
+[gd_scene load_steps=11 format=3 uid="uid://cw151s48axm75"]
+
+[ext_resource type="Script" path="res://scenes/node_3d.gd" id="1_almdi"]
+[ext_resource type="PackedScene" uid="uid://bnstuk747kcc" path="res://world_environment.tscn" id="2_40pyf"]
+[ext_resource type="PackedScene" uid="uid://cpugpcavjfvo1" path="res://scenes/fluteguy.tscn" id="2_vsoot"]
+[ext_resource type="AudioStream" uid="uid://djncgyybicwfp" path="res://audio/glitchy flute.mp3" id="4_34lea"]
+[ext_resource type="Material" uid="uid://egxuqaeaebyn" path="res://scenes/hologram.tres" id="4_quugy"]
+[ext_resource type="Script" path="res://scenes/loop_animation.gd" id="5_havyf"]
+[ext_resource type="PackedScene" uid="uid://c0qfv3ahy2r88" path="res://player.tscn" id="6_b0grn"]
+[ext_resource type="Script" path="res://SpatialAudioPlayer3D.gd" id="6_n1qou"]
+[ext_resource type="Script" path="res://FPController.gd" id="9_hjs0p"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1x3xx"]
+
+[node name="stage" type="Node3D"]
+script = ExtResource("1_almdi")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_40pyf")]
+
+[node name="fluteguy" parent="." instance=ExtResource("2_vsoot")]
+transform = Transform3D(0.763796, 0, -0.645457, 0, 1, 0, 0.645457, 0, 0.763796, -0.308, 0, -0.808)
+
+[node name="Alpha_Joints" parent="fluteguy/fluteb/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("4_quugy")
+
+[node name="Alpha_Surface" parent="fluteguy/fluteb/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("4_quugy")
+
+[node name="AnimationPlayer" parent="fluteguy/fluteb" index="1"]
+script = ExtResource("5_havyf")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="fluteguy"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0228854, 1.67689, -2.00061)
+stream = ExtResource("4_34lea")
+autoplay = true
+script = ExtResource("6_n1qou")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="player" parent="." instance=ExtResource("6_b0grn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("9_hjs0p")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_1x3xx")
+
+[connection signal="animation_finished" from="fluteguy/fluteb/AnimationPlayer" to="fluteguy/fluteb/AnimationPlayer" method="_on_animation_finished"]
+
+[editable path="fluteguy"]
+[editable path="player"]

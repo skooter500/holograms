@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://b4fvdqimdksel"]
+
+[ext_resource type="Script" path="res://scenes/node_3d.gd" id="1_cwbai"]
+[ext_resource type="PackedScene" uid="uid://bnstuk747kcc" path="res://world_environment.tscn" id="2_llcss"]
+[ext_resource type="PackedScene" uid="uid://cpugpcavjfvo1" path="res://scenes/fluteguy.tscn" id="3_m8m82"]
+[ext_resource type="Material" path="res://Holo/pool.tres" id="5_gjtkh"]
+[ext_resource type="AudioStream" uid="uid://1sgqy3onds5v" path="res://audio/Echoes of the Glen.mp3" id="6_422jp"]
+[ext_resource type="Script" path="res://SpatialAudioPlayer3D.gd" id="6_yfgd1"]
+[ext_resource type="PackedScene" uid="uid://c0qfv3ahy2r88" path="res://player.tscn" id="7_macnq"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m3fqu"]
+
+[node name="stage" type="Node3D"]
+script = ExtResource("1_cwbai")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_llcss")]
+
+[node name="fluteguy" parent="." instance=ExtResource("3_m8m82")]
+transform = Transform3D(0.763796, 0, -0.645457, 0, 1, 0, 0.645457, 0, 0.763796, -0.30828, 0, -0.80754)
+
+[node name="Alpha_Joints" parent="fluteguy/fluteb/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("5_gjtkh")
+
+[node name="Alpha_Surface" parent="fluteguy/fluteb/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("5_gjtkh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="fluteguy"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, 0.0265631, 1.64572, -2.07035)
+stream = ExtResource("6_422jp")
+autoplay = true
+script = ExtResource("6_yfgd1")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="player" parent="." instance=ExtResource("7_macnq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_m3fqu")
+
+[editable path="fluteguy"]
+[editable path="player"]

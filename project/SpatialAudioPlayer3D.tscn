@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmmoknstrbq5q"]
+
+[ext_resource type="Script" path="res://SpatialAudioPlayer3D.gd" id="1_6howw"]
+
+[node name="SpatialAudioPlayer3d" type="AudioStreamPlayer3D"]
+script = ExtResource("1_6howw")
+
+[node name="RayCastdown" type="RayCast3D" parent="."]
+target_position = Vector3(0, -100, 0)
+collision_mask = 8
+
+[node name="RayCastleft" type="RayCast3D" parent="."]
+target_position = Vector3(100, 0, 0)
+collision_mask = 8
+
+[node name="RayCastright" type="RayCast3D" parent="."]
+target_position = Vector3(-100, 0, 0)
+collision_mask = 8
+
+[node name="RayCastforward" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, 100)
+collision_mask = 8
+
+[node name="RayCastforwardleft" type="RayCast3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(0, 0, 100)
+collision_mask = 8
+
+[node name="RayCastforwardright" type="RayCast3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(0, 0, 100)
+collision_mask = 8
+
+[node name="RayCastbackwardright" type="RayCast3D" parent="."]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(0, 0, -100)
+collision_mask = 8
+
+[node name="RayCastbackwardleft" type="RayCast3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0, 0)
+target_position = Vector3(0, 0, -100)
+collision_mask = 8
+
+[node name="RayCastbackward" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0, 0, -100)
+collision_mask = 8
+
+[node name="RayCastup" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0, 100, 0)
+collision_mask = 8
+
+[node name="RayCastPlayer" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+target_position = Vector3(0, 100, 0)
+collision_mask = 8

@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://dp3512eiumt61"]
+
+[ext_resource type="Script" path="res://scenes/node_3d.gd" id="1_xhqgg"]
+[ext_resource type="PackedScene" uid="uid://dcj7urwaa46pf" path="res://scenes/concertinaguy.tscn" id="2_7ftc0"]
+[ext_resource type="PackedScene" uid="uid://bnstuk747kcc" path="res://world_environment.tscn" id="2_kbjig"]
+[ext_resource type="Material" path="res://Holo/bee.tres" id="3_agp77"]
+[ext_resource type="Script" path="res://scenes/loop_animation.gd" id="4_55g0u"]
+[ext_resource type="AudioStream" uid="uid://bwxcm3ot1yovk" path="res://audio/Digital Ceili.mp3" id="4_ukfe0"]
+[ext_resource type="Script" path="res://SpatialAudioPlayer3D.gd" id="5_qg767"]
+[ext_resource type="PackedScene" uid="uid://c0qfv3ahy2r88" path="res://player.tscn" id="6_g4sny"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_uq13m"]
+
+[node name="stage" type="Node3D"]
+script = ExtResource("1_xhqgg")
+
+[node name="WorldEnvironment" parent="." instance=ExtResource("2_kbjig")]
+
+[node name="concertinaguy" parent="." instance=ExtResource("2_7ftc0")]
+transform = Transform3D(0.49514, -4.21055e-08, -0.868813, 4.86258e-08, 1, -2.07512e-08, 0.868813, -3.1972e-08, 0.49514, -1.743, 0, 0.128)
+metadata/_edit_group_ = true
+
+[node name="Skeleton3D" parent="concertinaguy/concertinaa/Armature_001" index="0"]
+bones/0/position = Vector3(-2.63271e-05, -0.0471019, -0.997851)
+bones/0/rotation = Quaternion(-0.707107, 2.97907e-05, 3.227e-05, 0.707107)
+bones/1/rotation = Quaternion(-0.0607302, 2.29811e-08, 5.87e-06, 0.998154)
+bones/5/rotation = Quaternion(3.7965e-08, -5.24425e-12, 1.81988e-11, 1)
+bones/7/position = Vector3(0.061058, 0.0910732, 0.0075733)
+bones/7/rotation = Quaternion(-0.453869, -0.544821, 0.551167, -0.439759)
+bones/8/rotation = Quaternion(-0.010471, -0.00106486, 0.101149, 0.994816)
+bones/9/position = Vector3(-1.3439e-05, 0.274049, -1.47646e-05)
+bones/9/rotation = Quaternion(5.28247e-07, -1.5608e-07, 1.19822e-08, 1)
+bones/10/rotation = Quaternion(5.53577e-07, 1.61683e-07, 5.21611e-08, 1)
+bones/11/rotation = Quaternion(0.251895, -0.0594641, 0.221924, 0.940087)
+bones/12/rotation = Quaternion(1.9282e-08, 2.32282e-07, 1.49013e-07, 1)
+bones/13/position = Vector3(5.46873e-06, 0.0438355, 2.44151e-05)
+bones/13/rotation = Quaternion(4.05865e-07, 3.31444e-08, -9.12696e-08, 1)
+bones/15/rotation = Quaternion(2.7573e-07, 1.86866e-07, -2.09483e-07, 1)
+bones/16/rotation = Quaternion(-2.61543e-06, -6.66864e-08, -2.60022e-07, 1)
+bones/17/rotation = Quaternion(7.49321e-07, 1.06398e-08, 1.93986e-07, 1)
+bones/19/rotation = Quaternion(-1.49273e-06, 1.10758e-07, 4.07211e-07, 1)
+bones/20/rotation = Quaternion(1.52044e-06, -8.99346e-08, -1.14615e-07, 1)
+bones/21/rotation = Quaternion(-6.59488e-07, 1.82652e-07, -1.07675e-07, 1)
+bones/23/rotation = Quaternion(-1.59123e-06, 2.06244e-07, 3.89419e-07, 1)
+bones/24/rotation = Quaternion(2.16237e-06, -3.62296e-08, -1.98988e-07, 1)
+bones/25/rotation = Quaternion(-2.08168e-06, 2.04116e-07, 2.28219e-07, 1)
+bones/27/rotation = Quaternion(-5.53411e-07, 2.82247e-07, -3.62036e-07, 1)
+bones/28/rotation = Quaternion(-2.24006e-07, -3.15438e-07, 9.11552e-08, 1)
+bones/29/rotation = Quaternion(3.91669e-06, 5.21718e-07, 8.95818e-07, 1)
+bones/31/rotation = Quaternion(0.453804, -0.544876, 0.551112, 0.439828)
+bones/32/rotation = Quaternion(-0.0104359, 0.00106124, -0.10115, 0.994816)
+bones/33/rotation = Quaternion(2.91093e-07, 1.56636e-07, 2.37601e-08, 1)
+bones/34/position = Vector3(-1.82865e-07, 0.276145, 1.74568e-05)
+bones/34/rotation = Quaternion(-4.40805e-07, -2.02385e-07, -1.34717e-07, 1)
+bones/35/rotation = Quaternion(0.251895, 0.0594647, -0.221925, 0.940086)
+bones/36/position = Vector3(-4.83541e-06, 0.0474639, 3.86147e-06)
+bones/36/rotation = Quaternion(-1.41375e-07, -3.61737e-07, -6.3144e-07, 1)
+bones/37/position = Vector3(1.97066e-06, 0.0438058, -1.98597e-05)
+bones/37/rotation = Quaternion(-1.14339e-06, 7.48243e-07, 2.6077e-07, 1)
+bones/39/rotation = Quaternion(-8.45847e-07, -3.25917e-08, -4.34368e-07, 1)
+bones/40/rotation = Quaternion(6.6143e-07, 2.82264e-08, 3.27163e-08, 1)
+bones/41/position = Vector3(1.27633e-05, 0.0341445, 1.90004e-06)
+bones/41/rotation = Quaternion(2.75365e-06, -3.28639e-08, -9.37697e-08, 1)
+bones/43/rotation = Quaternion(-9.35508e-07, -4.0297e-08, -5.01533e-07, 1)
+bones/44/rotation = Quaternion(1.971e-06, 6.36488e-08, 1.94721e-07, 1)
+bones/45/rotation = Quaternion(-1.06339e-06, -1.09712e-07, 3.86971e-08, 1)
+bones/47/rotation = Quaternion(9.31279e-07, -8.80263e-08, 6.06712e-07, 1)
+bones/48/rotation = Quaternion(-1.52497e-06, -7.96174e-08, -3.01403e-07, 1)
+bones/49/rotation = Quaternion(8.05567e-07, 7.54039e-08, 4.6931e-07, 1)
+bones/51/rotation = Quaternion(7.92366e-07, -1.09243e-07, 2.03545e-07, 1)
+bones/52/rotation = Quaternion(-8.75987e-07, 4.33252e-09, -1.41308e-08, 1)
+bones/53/rotation = Quaternion(1.14473e-06, -2.6868e-09, 7.2978e-08, 1)
+bones/55/rotation = Quaternion(2.04256e-05, -0.00633988, 0.999976, -0.00296974)
+bones/56/rotation = Quaternion(-0.0181341, 0.000182743, -0.00592015, 0.999818)
+bones/57/rotation = Quaternion(0.540558, 0.014366, 0.0249509, 0.840814)
+bones/58/rotation = Quaternion(0.227692, -0.0325223, -0.0153657, 0.973069)
+bones/60/rotation = Quaternion(-1.82463e-05, -0.00633335, 0.999975, 0.00305725)
+bones/61/rotation = Quaternion(-0.0181471, -0.000182898, 0.00592015, 0.999818)
+bones/62/rotation = Quaternion(0.540563, -0.0143662, -0.0249517, 0.840811)
+bones/63/rotation = Quaternion(0.227709, 0.0321177, 0.0152574, 0.97308)
+
+[node name="Alpha_Joints" parent="concertinaguy/concertinaa/Armature_001/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("3_agp77")
+
+[node name="Alpha_Surface" parent="concertinaguy/concertinaa/Armature_001/Skeleton3D" index="1"]
+surface_material_override/0 = ExtResource("3_agp77")
+
+[node name="AnimationPlayer" parent="concertinaguy/concertinaa" index="1"]
+script = ExtResource("4_55g0u")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="concertinaguy"]
+transform = Transform3D(1, 1.24345e-14, 2.98023e-08, -5.32907e-15, 1, 1.95399e-14, -2.98023e-08, -5.32907e-15, 1, -0.38974, 0.907635, -1.33987)
+stream = ExtResource("4_ukfe0")
+autoplay = true
+script = ExtResource("5_qg767")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="player" parent="." instance=ExtResource("6_g4sny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_uq13m")
+
+[connection signal="animation_finished" from="concertinaguy/concertinaa/AnimationPlayer" to="concertinaguy/concertinaa/AnimationPlayer" method="_on_animation_finished"]
+
+[editable path="concertinaguy"]
+[editable path="player"]

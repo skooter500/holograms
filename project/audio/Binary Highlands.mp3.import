@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gexvfe0yk7fy"
+path="res://.godot/imported/Binary Highlands.mp3-b0f411aa6a70cee7bf8e151bb78d070f.mp3str"
+
+[deps]
+
+source_file="res://audio/Binary Highlands.mp3"
+dest_files=["res://.godot/imported/Binary Highlands.mp3-b0f411aa6a70cee7bf8e151bb78d070f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

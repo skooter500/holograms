@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpo5lob1k2vdw"
+path="res://.godot/imported/Echoes of Heritage.mp3-667bc1b231e696f9ed71eb586454108a.mp3str"
+
+[deps]
+
+source_file="res://audio/Echoes of Heritage.mp3"
+dest_files=["res://.godot/imported/Echoes of Heritage.mp3-667bc1b231e696f9ed71eb586454108a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
